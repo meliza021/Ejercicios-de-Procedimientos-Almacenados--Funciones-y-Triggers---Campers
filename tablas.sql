@@ -227,3 +227,10 @@ INSERT INTO factura (total, fecha, pedido_id, cliente_id) VALUES
 (35000, '2025-06-10 12:05:00', 1, 1),
 (50000, '2025-06-09 13:35:00', 2, 2),
 (26500, '2025-06-08 18:50:00', 3, 3);
+CREATE TABLE IF NOT EXISTS pizza_ingrediente (
+    pizza_id INT UNSIGNED NOT NULL,  -- Referencia a producto donde tipo_producto_id = 2
+    ingrediente_id INT UNSIGNED NOT NULL,
+    PRIMARY KEY (pizza_id, ingrediente_id),
+    FOREIGN KEY (pizza_id) REFERENCES producto(id) ON DELETE CASCADE,
+    FOREIGN KEY (ingrediente_id) REFERENCES ingrediente(id) ON DELETE CASCADE
+);
