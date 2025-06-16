@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS detalle_pedido (
   FOREIGN KEY (pedido_id) REFERENCES pedido(id)
 );
 
--- Para productos individuales
+-- Para productos individuales que se necesiten 
 CREATE TABLE IF NOT EXISTS detalle_pedido_producto (
   detalle_id       INT UNSIGNED   NOT NULL,
   producto_id      INT UNSIGNED   NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE IF NOT EXISTS ingredientes_extra (
   FOREIGN KEY (ingrediente_id) REFERENCES ingrediente(id)
 );
 
--- DATOS CORREGIDOS
+-- DATOS CORREGIDOS ya que tenian mal la y no me dejaba ingresar datos 
 INSERT INTO cliente (nombre, telefono, direccion) VALUES
 ('María López', '3001234567', 'Calle 10 #20-30, Bogotá'),
 ('Juan Pérez', '3107654321', 'Carrera 5 #45-67, Medellín'),
@@ -185,7 +185,7 @@ INSERT INTO combo (nombre, precio) VALUES
 ('Pack Bebida & Pizza', 24000),
 ('Combo Familiar', 65000);
 
--- Combos con presentaciones específicas
+-- Combos con presentaciones específicas para saber que etsamos pidiendo 
 INSERT INTO combo_producto (combo_id, producto_id, presentacion_id) VALUES
 (1, 2, 1), (1, 3, 1), -- Combo 1: Pizza pequeña + Papas pequeñas
 (2, 1, 2), (2, 2, 1), -- Combo 2: Coca mediana + Pizza pequeña
