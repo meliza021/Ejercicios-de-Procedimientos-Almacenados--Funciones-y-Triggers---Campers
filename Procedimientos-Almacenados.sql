@@ -16,6 +16,7 @@ BEGIN
         SET p_presentacion_id = 2;
     END IF;
     
+    
     -- Validaciones básicas
     IF p_precio <= 0 OR p_nombre IS NULL OR TRIM(p_nombre) = '' THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Datos inválidos';
