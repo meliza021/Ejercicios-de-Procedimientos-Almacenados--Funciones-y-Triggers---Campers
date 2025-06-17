@@ -197,6 +197,7 @@ DELIMITER ;
 
 -- Probar función 1: 
 SELECT fc_calcular_subtotal_pizza(2) as 'Subtotal Pizza Jamón Queso';
+SELECT fc_calcular_subtotal_pizza(3) as 'Subtotal Pizza ';
 
 -- Probar función 2:
 SELECT fc_descuento_por_cantidad(3, 35000) as 'Descuento 3 unidades';
